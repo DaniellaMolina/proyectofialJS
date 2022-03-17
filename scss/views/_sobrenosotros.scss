@@ -1,0 +1,79 @@
+/*Dark Mode*/
+.dark-mode-btn{
+    position: fixed;
+    z-index: 1000;
+    left: 10px; 
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--first-color);
+    color:var(--second-color);
+    cursor: pointer; 
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+    outline: none;
+    margin-top: 3rem;
+  }
+
+
+  .dark-mode-btn:hover{
+    outline: none;
+    border: 0;
+  }
+  
+
+/*Form*/
+  #contact-form input:validationMessage{
+    background-color: green;
+  }
+  
+  .smallMsj{
+    visibility: visible;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 20px;
+    color: red;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    /* border-radius: 0  0 10px 10px; */
+    align-items: center;
+  }
+  .bValid{
+    border: green solid 2px;
+  }
+  .nValid{
+    border: red solid 2px;
+  }
+
+  .item {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .item-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .item-image {
+    height: 300px;
+    width: 100%;
+  }
+  
+  .item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px 15px;
+  }
+  
+  .item-details > .item-price {
+    margin: 0;
+  }
+  
