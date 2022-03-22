@@ -1,12 +1,55 @@
-let producto = prompt ("Ingrese si quiere comprar lemon pie, red velvet o chocotorta");
+//Contabilizador//
+/*let numeros= (10, 20, 30, 40)
 
-    if (producto == "lemon pie") {
-        alert ("El lemon pie cuesta $990")
-    } else if (producto == "red velvet"){
-        alert ("La torta red velvet cuesta $1050")
-    }else if (producto == "chocotorta"){
-        alert ("La chocotorta cuesta $970")
+for (let i=20; i<30; i++) {
+
+    console.log (i)
+}*/
+
+//Ingresar la cantidad//
+/*let cantidad = parseInt(prompt ("Ingrese el cantidad total de tortas que desea comprar:"));
+
+for (let i = 0; i <= cantidad; i++) {
+    console.log (i)
+}*/
+
+//Contabilizador de pares//
+/*
+for(let i=2; i<=20 ; i=i+2) {
+    console.log(i);
+  }
+*/
+//Monto total de compra//
+let compra = 1;
+let montototal;
+let montoinicial = 900; 
+
+for(let i=1; i<990; i++) {
+    let cantidad = parseInt(prompt("Cantidad de productos que desea comprar:"))
+    let montototal = cantidad * montoinicial 
+
+}
+
+alert("El monto total a pagas es de $" +montototal+ " pesos uruguayos")
+
+//Monto total de compra con descuento//
+/*let compra = 1;
+let montototal;
+let montoinicial = 900; 
+let descuento = 10;
+let comprasmayores = 2000;
+let montocondesc
+
+for(let i=1; i<990; i++) {
+    let cantidad = parseInt(prompt("Cantidad de productos que desea comprar:"))
+    let montototal = cantidad * montoinicial
+    alert("El monto total a pagas es de $" +montototal+ " pesos uruguayos")
+    
+    let totaldecuento =montototal *descuento
+   
+    if (montototal === comprasmayores){
+        totaldecuento = montototal - totaldecuento
     }
-
-
-alert ("Gracias por su compra, lo esperamos pronto nuevamente.");
+   
+}
+alert ("Por haber realizado una compra mayor a $2000 tienes un 10% de descuento y el monto total a pagar es de $" +montocondesc+ " pesos uruguayos")*/
