@@ -1,52 +1,38 @@
-/*let compra = 1;
-let montototal;
-let montoinicial = 900; 
-let comprasmayores = 2000;
-let x= montototal;
-let montocondesc;
+/*const precio = parseInt(prompt("Ingrese monto total del producto a comprar:"))
+const iva = 0.21
+const precioTotal = calculadoraiva (precio, iva);
 
-const iva = calculadoriva => {
-    montototal * 0.21 ;
-}
+function calculadoraiva (precioProducto, impuestos) {
+if (precioProducto >= 2000) {
+
+    return precioProducto - (precioProducto * impuestos)
 
 
+} else {
 
- function iva2() {
-
-    for(let i=1; i<990; i++) {
-        let cantidad = parseInt(prompt("Cantidad de productos que desea comprar:"))
-        let montototal = cantidad * montoinicial
-        console.log ("El monto total a pagas es de $" +montototal+ " pesos uruguayos")
-    } 
-
-    for(let i=2000; i<20000; i++) {
-        let cantidad = parseInt(prompt("Cantidad de productos que desea comprar:"))
-        let montototal = cantidad * montoinicial
-        let montocondesc = montototal * calculadoriva
-        console.log ("El monto total a pagas es de $" +montocondesc+ " pesos uruguayos") 
-    }
+    return precioProducto
 
 }
-
-iva2 (20000); */
-
-let montoinicial = 900; 
-let comprasmayores = 2000;
-let montocondesc;
-let montototal = cantidad * montoinicial ;
-
-let cantidad = parseInt(prompt("Cantidad de productos que desea comprar:"))
-
-function calculadoriva () {
-    montototal * 0.21 ;
 }
 
-if(montoinicial <= comprasmayores ) {
+alert(precioTotal);*/
+
+const miArray = [1,5,10,30, 40, 50, 60, 70]
+
+const resultado = sumaArrays(miArray); 
+
+
+function sumaArrays (total) {
+    if (total > 100) {
     
-    alert ("El monto total a pagas es de $" +montototal+ " pesos uruguayos")
-
-} else if(montoinicial >= comprasmayores ) {
-    alert ("El monto total a pagas es de $" +calculadoriva+ " pesos uruguayos")
+        return alert("Estuviste flojo")
+    
+    
+    } else {
+    
+        return total
+    
+    }
 }
 
-calculadoriva (5);
+alert(resultado);
