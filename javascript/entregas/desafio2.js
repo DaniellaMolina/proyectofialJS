@@ -17,22 +17,26 @@ if (precioProducto >= 2000) {
 
 alert(precioTotal);*/
 
-const miArray = [1,5,10,30, 40, 50, 60, 70]
-
-const resultado = sumaArrays(miArray); 
+const miArray = [1,5,10,30, 40, 50, 60, 70];
+let sumaTotal = 0;
+const resultado = sumaArrays(miArray, sumaTotal); 
 
 
 function sumaArrays (total) {
-    if (total > 100) {
-    
-        return alert("Estuviste flojo")
-    
+    if (total >= 100) {
+
+        for (let i = 0; i < miArray.length; i++){
+         sumaTotal += miArray[i];
+        }
+        
+        return (resultado);
+        
     
     } else {
     
-        return total
-    
+        return ("Estuviste flojo");
     }
 }
 
-alert(resultado);
+alert (resultado);
+
