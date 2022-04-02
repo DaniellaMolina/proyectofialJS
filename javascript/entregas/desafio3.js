@@ -18,17 +18,17 @@ const productos = [
     {nombre: 'Strawberry and cream',  precio: 890}
 ]
 
-//Recorrer el array y obtener cada producto//
+//ForEach: Recorrer el array y obtener cada producto//
 productos.forEach((producto) => {
     console.log(producto.nombre)
 });
 
 
-//Ordena el array por menor a mayor precio//
+//Sort: Ordena el array por menor a mayor precio//
 console.log(productos.sort((a, b) => a.precio - b.precio));
 
 
-// Filtrar un array con precio menor a $1200//
+//Filter: Filtrar un array con precio menor a $1200//
 const productosFiltrados = productos.filter((producto) => {
     return producto.precio <= 1200
 });
@@ -50,10 +50,19 @@ const busquedaProducto = productos.find((producto) => {
 
 console.log (busquedaProducto);
 
-//Buscar si existe un chesee cake//
+//Includes: Buscar si existe un chesee cake//
 const incluyeChesee = productos.includes('Chesee cake')
 
 console.log (incluyeChesee);
+
+//Some: indicar si el array tiene productos costosos que tengan un precio mayor a $1500//
+const tieneProductosCostosos = productos.some((producto) => {
+    return producto.precio > 1500
+})
+
+console.log (tieneProductosCostosos);
+
+
 
 //Length//
 console.log (productos.length);
