@@ -180,10 +180,11 @@ function menuDeCompras() {
     }
 }
 
-const iva = 0.21
-const conDescuento = calculadoraiva (precioTotal, iva);
+
 
 function calculadoraiva (precioProducto, impuestos) {
+const iva = 0.21
+const conDescuento = calculadoraiva (precioTotal, iva);
 if (precioProducto >= 2500) {
 
     return precioProducto - (precioProducto * impuestos)
