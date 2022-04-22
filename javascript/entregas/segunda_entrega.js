@@ -233,7 +233,6 @@ function imprimirProductosEnHTML(cakes) {
 
 
 
-
 // ----- Carrito ----- //
 function dibujarTabla(array) {
     let contenedor = document.getElementById("carrito");

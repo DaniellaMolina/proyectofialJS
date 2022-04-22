@@ -45,38 +45,16 @@
   .botones__span:nth-child(4) {
     --n: 4; }
 
-#search {
-  width: 15rem;
-  height: 2.5rem;
-  font-size: 1rem; }
-
-.content-search {
-  display: none; }
-
-.content-table {
-  width: 80%;
-  max-width: 12.5rem;
-  height: auto;
-  background: rgba(0, 0, 0, 0.3);
-  margin-left: 0.625rem;
-  overflow-y: visible;
-  overflow-x: hidden; }
-
-tbody tr td a {
-  display: block;
-  padding: 0.625rem;
-  color: #fff;
-  text-decoration: none; }
-
-tbody tr td a:hover {
-  background: rgba(0, 0, 0, 0.3); }
-
 /*Layaout*/
 * {
   text-decoration: none; }
 
 .carousel-inner {
   height: 80vh; }
+
+.logoFooter {
+  width: 10px;
+  border: solid red; }
 
 .logo-header {
   height: 7rem; }
@@ -572,3 +550,18 @@ a, a:hover {
     background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%); }
   .yellow:nth-child(2n)::before {
     background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%); } }
+
+.section2 {
+  height: 6rem;
+  text-align: center;
+  color: #fff;
+  overflow: visible !important;
+  margin: 1rem; }
+
+.vc_column-inner {
+  width: 10rem; }
+
+.vc_row, .wpb_column, .wpb_row {
+  display: flex;
+  justify-content: space-between;
+  border: solid red; }
