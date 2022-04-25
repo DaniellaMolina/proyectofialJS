@@ -3,21 +3,21 @@ class Cake {
     constructor(cake) {
         this.id = cake.id;
         this.nombre = cake.nombre;
+        this.cantidad = cake.cantidad;
         this.precio = cake.precio;
-        this.cantidad = 1;
         this.precioTotal = cake.precio;
     }
 
-    agregarUnidad() {
-        this.cantidad++;
+    agregarUnidadAlStock() {
+        return this.cantidad++;
     }
 
-    quitarUnidad() {
-        this.cantidad--;
+    quitarUnidadDelStock() { 
+        return (this.cantidad-= 1) ;
     }
 
-    actualizarPrecioTotal() {
-        this.precioTotal = this.precio * this.cantidad;
+    actualizarPrecio() {
+        return (this.precioTotal = this.precio * this.cantidad);
     }
 }
 
@@ -277,10 +277,13 @@ const cakes = [
 ];
 
 
-let carrito;
-// ----- Declaración de funciones ----- //
-
 // ----- Chquear carrito en Storage ----- //
+let carrito= chequearCarritoEnStorage ();
+
+console.log("contenido del carrito: ", carrito);
+dibujarTabla(carrito);
+
+// ----- Declaración de funciones  -----//
 
 function chequearCarritoEnStorage() {
     let contenidoEnStorage = JSON.parse(localStorage.getItem("carritoEnStorage"));
@@ -289,11 +292,10 @@ function chequearCarritoEnStorage() {
     if (contenidoEnStorage) {
         let array = [];
         for (let i = 0; i < contenidoEnStorage.length; i++) {
-            let cake = new Cake (contenidoEnStorage[i]);
-            cake.actualizarPrecioTotal();
-            array.push(cake);
-        }
-
+            console.log("indices del array: ", contenidoEnStorage[i].nombre);
+            array.push(new Cake (contenidoEnStorage[i]));
+          }
+        console.log("array: ", array);
         return array;
     }
     return [];
@@ -301,192 +303,164 @@ function chequearCarritoEnStorage() {
 
 
 // ----- Imprimir productos en el HTML ----- //
-function imprimirProductosEnHTML(cakes) {
- 
-    let cards = document.getElementById("cards");
-    
-    for (const cake of cakes) {
-    
-        let card = document.createElement("div");
-
-        card.innerHTML = `
-            <img class="card-img-top" src="${cake.img}" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title"><a href="./subpages-cakes/cake18.html" title="View Product">${cake.nombre}</a></h4>
-                <div class="row">
-                    <div class="col">
-                        <p class="card-price btn btn-dark btn-block">$${cake.precio}</p>
-                    </div>
-                    <div class="row">
-                        <button id="agregar${cake.id}" type="button" onclick="" class="addToCart btn btn-success btn-block fa fa-shopping-cart fa-2x"> Agregar </button>
-                    </div>
-                </div>
+for (let cake of cakes) {
+    $("#cuerpo").append(`
+        <div class="card text-center" style="width: 18rem;">
+        <div class="card-body">
+            <img src="${cake.img}" id="" class="card-img-top img-fluid" alt="">
+            <h2 class="card-title">${cake.nombre}</h2>
+            <h5 class="card-subtitle mb-2 text-muted">${cake.descripcion}</h5>
+            <p class="card-text">$${cake.precio}</p>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
             </div>
-        `;
-
-
-        cards.appendChild(card);
-
-
-        let boton = document.getElementById(`agregar${cake.id}`);
-
-
-        boton.onclick = () => agregarAlCarrito(cake.id);
-
-    }
+        </div>
+    </div>
+    `);
 }
-
 
 
 // ----- Carrito ----- //
-function dibujarTabla(array) {
-    let contenedor = document.getElementById("carrito");
-    contenedor.innerHTML = "";
+// ----- Tabla del carrito ----- //
+function dibujarTabla(carrito) {
+    let precioTotal;
 
-    let precioTotal = obtenerPrecioTotal(array);
-
-    let tabla = document.createElement("div");
-
-    tabla.innerHTML = `
-        <table id="tablaCarrito" class="table">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio Parcial</th>
-                    <th scope="col">Accion</th>
-                </tr>
-            </thead>
-
-            <tbody id="bodyTabla">
-                <tr>
-                    <td>Total: $${precioTotal}</td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-            <tr> 
-                <td> <button id="vaciarCarrito" class="btn btn-dark"> Vaciar Carrito </button> </td>
-            </tr>
-
-            </tbody>
-        </table>
-    `;
-
-    contenedor.appendChild(tabla);
-
-
-    let bodyTabla = document.getElementById("bodyTabla");
-    for (let cake of array) {
-        let datos = document.createElement("div");
-        datos.innerHTML = `
-            <tr>
-                <th scope="row"></th>
-                <td>${cake.nombre}</td>
-                <td>${cake.cantidad}</td>
-                <td>$${cake.precioTotal}</td>
-                <td><button id="eliminar${cake.id}" type="button" class="btn btn-dark">Eliminar</button></td>
-            </tr>
-      `;
-
-        bodyTabla.appendChild(datos);
-
-        $(`#eliminar${cake.id}`).on("click", () => {
-            eliminarDelCarrito(cake.id);
-        });
+    if (carrito) {
+      precioTotal = carrito.reduce(
+        (total, elemento) => total + elemento.precioTotal,
+        0
+      );
+    }
+  
+    $("#carro").empty();
+    $("#carro").append(`
+          <table id="tablaCarrito" class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Precio Parcial</th>
+                      <th scope="col">Accion</th>
+                  </tr>
+              </thead>
+              <tbody id="bodyTabla">
+                  <tr>
+                      <td>Total: $${precioTotal}</td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                  </tr>
+              <tr> 
+                  <td> <button id="vaciarCarrito" class="btn btn-dark"> Vaciar Carrito </button> </td>
+              </tr>
+  
+              </tbody>
+          </table>
+    `);
+  
+    for (let cake of carrito) {
+      $("#bodyTabla").append(`
+              <tr>
+                  <th scope="row">1</th>
+                  <td>${cake.nombre}</td>
+                  <td>${cake.cantidad}</td>
+                  <td>$${cake.precioTotal}</td>
+                  <td><button id="eliminar${cake.id}" type="button" class="btn btn-dark">Eliminar</button></td>
+              </tr>
+        `);
+  
+      $(`#eliminar${cake.id}`).on("click", () => {
+        eliminarDelCarrito(cake.id);
+      });
+      console.log("se agrego al carrito", cake.nombre);
     }
 }
 
+// ----- Agregar al carrito ----- //
+function agregarCarrito(id) {
 
-function agregarAlCarrito(idProducto) {
-
-    let cakeEnCarrito = carrito.find((elemento) => {
-        if (elemento.id == idProducto) {
-            return true;
-        }
-    });
-
-    if (cakeEnCarrito) {
-
-        let index = carrito.findIndex((elemento) => {
-            if (elemento.id === cakeEnCarrito.id) {
-                return true;
-            }
-        });
-
-        carrito[index].agregarUnidad();
-        carrito[index].actualizarPrecioTotal();
-    } else {
-
-        carrito.push(new Cake (cakes[idProducto], 1));
-    }
-
-    localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
-    dibujarTabla(carrito);
-}
-
-function eliminarDelCarrito(id) {
     let cake = carrito.find((cake) => cake.id === id);
 
-    let index = carrito.findIndex((element) => {
+    console.log(
+      `Cake encontrado con find en el array del carrito: ${cake}`
+    );
+    if (cake) {
+      console.log(cake);
+  
+      let index = carrito.findIndex((element) => {
         if (element.id === cake.id) {
-            return true;
+          return true;
         }
+      });
+      console.log(
+        `Indice de la cake agregado ${cake.nombre} en el carrito: ${index}`
+      );
+      console.log("Carrito[index]: ", carrito[index]);
+      console.log("Carrito: ", carrito);
+      carrito[index].cantidad++;
+      carrito[index].actualizarPrecio();
+      console.log(
+        "funcion actualizar precio: ",
+        carrito[index].actualizarPrecio()
+      );
+    } else {
+    
+      cake = cakes.find((cake) => cake.id === id);
+      let nuevoCake = new Cake(cake);
+      nuevoCake.cantidad = 1;
+  
+      carrito = chequearCarritoEnStorage();
+      console.log(`carrito ${carrito}`);
+      carrito.push(nuevoCake);
+      console.log("carrito por primera vez ", carrito);
+    }
+  
+    localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
+
+    let carritoEnLS = chequearCarritoEnStorage();
+    dibujarTabla(carritoEnLS);
+}
+
+// ----- Eliminar al carrito ----- //
+function eliminarDelCarrito(id) {
+    console.log("entre en eliminarDelCarrito");
+    let carrito = JSON.parse(localStorage.getItem("carritoEnStorage"));
+    console.log(`carrito en eliminar storage ${carrito}`);
+
+    let cake = carrito.find((cake) => cake.id === id);
+    console.log(`cake devuelto en eliminar del carrito: ${cake.nombre}`);
+  
+    let index = carrito.findIndex((element) => {
+      if (element.id === cake.id) {
+        return true;
+      }
     });
 
     if (cake.cantidad > 1) {
-
-        carrito[index].quitarUnidad();
-        carrito[index].actualizarPrecioTotal();
-    } else {
-
-        carrito.splice(index, 1);
-
-        if (carrito.lenght === 0) {
-            carrito = [];
-        }
-    }
-
-    localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
-    dibujarTabla(carrito);
-}
-
-
-// ----- Precio Total ----- //
-function obtenerPrecioTotal(array) {
-    let precioTotal = 0;
-
-    for (const producto of array) {
-        precioTotal += producto.precioTotal;
-
-    }
-
-    return precioTotal;
-
-
+      console.log(`cantidad disponible: ${cake.cantidad}`);
   
+
+      console.log(`index de la cake: ${index}`);
+      console.log(`Cantidad previa de la cake: ${carrito[index].cantidad}`);
+      console.log(`Objeto de la cake: ${carrito[index]}`);
+      carrito[index].quitarCantidadDelStock();
+      carrito[index].actualizarPrecio();
+      console.log(
+        `El precio de la cake ${carrito[index].nombre} es de ${carrito[index].precioTotal} y su cantidad es ${carrito[index].cantidad}`
+      );
+    } else {
+    
+      carrito.splice(index);
+  
+      if (carrito.lenght === 0) {
+        carrito = [];
+      }
+    }
+  
+
+    localStorage.setItem("carritoEnStorage", carrito);
+    let carritoEnStorage = chequearCarritoEnStorage();
+    dibujarTabla(carritoEnStorage);
 }
 
-
-
-// --- -Buscar ---//
-function filtrarBusqueda(e) {
-	e.preventDefault();
-
-
-	let ingreso = document.getElementById("busqueda").value.toLowerCase();
-	let filtro = cakes.filter((elemento) => elemento.nombre.toLowerCase().includes(ingreso));
-	console.log(filtro);
-	imprimirProductosEnHTML(filtro);
-}
-
-
-let btnFiltrar = document.getElementById("btnFiltrar");
-btnFiltrar.addEventListener("click", filtrarBusqueda);
-
-
-// --- Invocación de funciones ---//
-imprimirProductosEnHTML(cakes);
-carrito = chequearCarritoEnStorage();
-dibujarTabla(carrito);

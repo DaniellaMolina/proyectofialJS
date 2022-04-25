@@ -18,8 +18,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+   
     <!-- Css -->
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
@@ -59,11 +60,12 @@
               </li>
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
-              <button id="search-text" class="btn btn-light" type="submit">Buscar</button>
+                <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
+                <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
             </form>
             <div class="social">
-              <a href="../html/carrito.html"><i class="fa fa-shopping-cart fa-2x fa-lg p-4" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+              <a href="../html/carrito.html"><i class="fa fa-shopping-cart fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
            </div>
           </div>
         </div>
@@ -76,14 +78,13 @@
         <div>
             <img src="../images/73.png" class="img-fluid mb-2 mt-3" alt="...">
         </div>
-        <h1 id="title"></h1>
 
         <div id="contenedor">
             <div class="listado-cakes">
                 <div class="row">
                     <div class="col-12 col-sm-3">
-                        <div class="card bg-light mb-3">
-                            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categorías</div>
+                        <div class="card bg-secondary mb-3">
+                            <div class="card-header bg-secondary text-white text-uppercase"><i class="fa fa-list"></i> Categorías</div>
                             <ul class="list-group category_block">
                                 <li class="list-group-item"><a href="../html/cakes.html">Cakes</a></li>
                                 <li class="list-group-item"><a href="../html/macarons.html">Macarons</a></li>
@@ -92,27 +93,23 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4" id="cards"></div>
-                        <div class="col-12">
-                            <nav aria-label="...">
-                                <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <a class="page-link disabled" href="" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="./cakes.html">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="./cakes2.html">2</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="./cakes2.html">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <h1 id="title"></h1>
+                                <div id="cuerpo"></div>
+                                <div id="carro"></div>
+                              </div>
+                            </div>
                         </div>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-  
-        <div id="carrito"></div>
     </div>
 
 
@@ -137,10 +134,9 @@
                     </div>
                     <div class="col-md-6 ">
                         <form class="form-footer my-3">
-                            <input type="text"  placeholder="Buscar..." name="search">
-                            <input type="button" value="Buscar" >
+                            <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
+                            <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
                         </form>
-                        <h6> Newsletter</h6>
                         <div class="social">
                             <a href="#"><i class="fa fa-facebook fa-2x fa-lg p-4" style="color:#FFFFFF;" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-instagram fa-2x fa-lg p-4" style="color:#FFFFFF;" aria-hidden="true"></i></a>
@@ -153,11 +149,16 @@
         </div>
     </footer>
     
+
+    <!-- Jquery -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"crossorigin="anonymous"></script>
+
     <!-- Link con Javascript -->
-    <script src="../javascript/entregas/segunda_entrega.js"></script>
-
-    <!-- Link Javascript de bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="../javascript/carrito.js"></script>
 </body>
 </html>
