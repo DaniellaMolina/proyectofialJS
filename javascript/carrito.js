@@ -287,8 +287,8 @@ function dibujarTabla(carrito) {
                       </tr>
                   <tr> 
                       <td> <button id="vaciarCarrito" class="btn btn-dark"> Vaciar Carrito </button> </td>
+                      <td> <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#comprarModal" onclick="location.href='../html/comprar.html'">Comprar</button><td> 
                   </tr>
-      
                   </tbody>
               </table>
         `);
