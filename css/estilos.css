@@ -1,49 +1,22 @@
 /*Componenetes*/
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
-.botones {
-  list-style-type: none; }
-  .botones__li {
-    --c: #E0B796;
-    color: var(--c);
-    font-size: 16px;
-    border: 0.3em solid var(--c);
-    border-radius: 0.5em;
-    width: 12em;
-    height: 3em;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: sans-serif;
-    letter-spacing: 0.1em;
-    text-align: center;
-    line-height: 3em;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: 0.5s;
-    margin: 0; }
-  .botones__span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--c);
-    transform: translateY(150%);
-    border-radius: 50%;
-    left: calc((var(--n) - 1) * 100%);
-    transition: 0.5s;
-    transition-delay: calc((var(--n) - 1) * 0.1s);
-    z-index: -1; }
-  .botones__li:hover {
-    color: #3e3e3e; }
-  .botones__li:hover .botones__span {
-    transform: translateY(0) scale(2); }
-  .botones__span:nth-child(1) {
-    --n: 1; }
-  .botones__span:nth-child(2) {
-    --n: 2; }
-  .botones__span:nth-child(3) {
-    --n: 3; }
-  .botones__span:nth-child(4) {
-    --n: 4; }
+.btn-whatsapp {
+  display: block;
+  font-size: 4rem;
+  color: rgba(249, 250, 201, 0.897);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  z-index: 999; }
+
+.btn-whatsapp :hover {
+  color: #ffff00; }
+
+#community {
+  max-height: max-content; }
 
 /*Layaout*/
 * {
