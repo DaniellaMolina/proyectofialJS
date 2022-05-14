@@ -1,10 +1,10 @@
-[
+const cakes =[
     {
       "id": 0,
-      "name": "Lemon Pie",
+      "nombre": "Lemon Pie",
       "descripcion": "Torta de limon con merengue italiano",
       "precio": 990,
-      "img": "images/30.png"
+      "img": "/images/30.png"
     },
     {
       "id": 1,
@@ -222,5 +222,75 @@
       "descripcion": "",
       "precio": 1500,
       "img": "/images/61.png"
-    }
+    },
+    {
+      "id": 31,
+      "nombre": "Red velvet",
+      "descripcion": "Relleno de un aterciopelado ganache de queso crema.  ",
+      "precio": 100,
+      "img": "/images/62.png"
+    },
+    {
+      "id": 32,
+      "nombre": "Orange",
+      "descripcion": "Relleno de mouse de naranja",
+      "precio": 100,
+      "img": "/images/63.png"
+    },
+    {
+      "id": 33,
+      "nombre": "Limon amarillo",
+      "descripcion": "Es una combinación perfecta de un sabor aromático, dulce y ácido a la vez.",
+      "precio": 100,
+      "img": "/images/64.png"
+    },
+    {
+      "id": 34,
+      "nombre": "Casis",
+      "descripcion": "Macaron relleno de cassis",
+      "precio": 100,
+      "img": "/images/65.png"
+    },
+    {
+      "id": 35,
+      "nombre": "Matcha",
+      "descripcion":"Macaron con un relleno intenso de té verde y con increíbles propiedades antioxidantes.",
+      "precio": 100,
+      "img": "/images/66.png"
+    },
+    {
+      "id": 36,
+      "nombre": "Frambuesa",
+      "descripcion": "Macaron con relleno de ganache de frambuesa.  ",
+      "precio": 100,
+      "img": "/images/67.png"
+    },
+    {
+      "id": 37,
+      "nombre": "Crema del cielo",
+      "descripcion": "Macarron relleno de crema americana blue",
+      "precio": 100,
+      "img": "/images/68.png"
+    },
+    {
+      "id": 38,
+      "nombre": "Grey",
+      "descripcion": "Macarron relleno de queso crema",
+      "precio": 100,
+      "img": "/images/69.png"
+    },
+    {
+      "id": 39,
+      "nombre": "Chocolate",
+      "descripcion": "El mejor chocolate belga transformado en un suave ganache.",
+      "precio": 100,
+      "img": "/images/70.png"
+    },
+    {
+      "id": 40,
+      "nombre": "Vainilla",
+      "descripcion": "Macaron con ganache de vainilla de Papantla",
+      "precio": 100,
+      "img": "/images/71.png"
+    },
   ]

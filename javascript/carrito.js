@@ -1,8 +1,10 @@
-// ----- Imprimir productos en el HTML, convertir un archivo json a datos javascript----- //
-const cakes = "./productos.json";
+  // Si existe me guarda en la variable, sino lo deja vacio.
+let carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || [];
+console.log(carrito);
+dibujarTabla(carrito);
 
-fetch(cakes).then(res => res.json).then( data => { 
-  for (let cake of cakes) {
+// ----- Imprimir productos en el HTML, convertir un archivo json a datos javascript----- //
+for (let cake of cakes) {
   $("#cuerpo").append(`
             <div class="card text-center" style="width: 15rem; margin:1rem;">
             <div class="card-body">
@@ -16,16 +18,6 @@ fetch(cakes).then(res => res.json).then( data => {
             </div>
         </div>
         `);} 
-})
-
-
-// Si existe me guarda en la variable, sino lo deja vacio.
-let carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || [];
-console.log(carrito);
-dibujarTabla(carrito);
-
-
-
 
 // ----- Carrito ----- //
 // ----- Tabla del carrito ----- //
