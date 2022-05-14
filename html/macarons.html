@@ -67,33 +67,34 @@
                 <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
                 <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
             </form>
-            <div class="social">
-                <li class="nav-item dropdown amarillo">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
-                        <i class="fas fa-shopping-cart imgCarrito"></i>
-                    </a>
-                    <ul class="dropdown-menu justify-content-center" aria-labelledby="navbarDropdown" id="carrito">
-                        <li>
-                            <table class="table text-center px-3"  id="lista-carrito">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Fushh!</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!--Aca se agregan los items desde Js-->
-                                </tbody>
-                            </table>
-                        </li>
-                        
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-center" href="#" id="vaciar-carrito"> Vaciar Carrito </a></li>
-                        <li><a class="dropdown-item text-center" href="#" id="pagar" data-toggle="modal" data-target="#exampleModal"> <i class="fab fa-cc-visa"></i>      Pagar </a></li>
-                    </ul>
+            <div class="social d-flex">
+                <li style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
+                    <i class="fa fa-shopping-cart fa-2x fa-lg p-1" style="color:#FFFFFF;"></i>
+                </a>
+                <ul class="dropdown-menu justify-content-center" aria-labelledby="navbarDropdown" id="carrito">
+                    <li>
+                        <table class="table text-center px-3"  id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Fushh!</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--Aca se agregan los items desde Js-->
+                            </tbody>
+                        </table>
                     </li>
+                    
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-center" href="#" id="vaciar-carrito"> Vaciar Carrito </a></li>
+                    <li><a class="dropdown-item text-center" href="#" id="pagar" data-toggle="modal" data-target="#exampleModal"> <i class="fab fa-cc-visa"></i>Pagar </a></li>
+                </ul>
+                </li>
+
               <a href=""><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
            </div>
           </div>
