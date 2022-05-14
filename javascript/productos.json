@@ -4,7 +4,7 @@ const cakes =[
       "nombre": "Lemon Pie",
       "descripcion": "Torta de limon con merengue italiano",
       "precio": 990,
-      "img": "/images/30.png"
+      "img": "../images/30.png"
     },
     {
       "id": 1,
