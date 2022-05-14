@@ -14,6 +14,7 @@ for (let cake of cakes) {
                 <p class="card-text">$${cake.precio}</p>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
+                    <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number" value="1">
                 </div>
             </div>
         </div>
@@ -60,9 +61,9 @@ function dibujarTabla(carrito) {
   for (let cake of carrito) {
     $("#bodyTabla").append(`
                   <tr>
-                      <th scope="row">1</th>
+                      <th scope="row"><img src=${cake.img} class="shopping-cart-image"></th>
                       <td>${cake.nombre}</td>
-                      <td>${cake.cantidad}</td>
+                      <td><input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number" value="1">${cake.cantidad}</td>
                       <td>$${cake.precioTotal}</td>
                       <td><button id="eliminar${cake.id}" type="button" class="btn btn-dark">Eliminar</button></td>
                   </tr>
