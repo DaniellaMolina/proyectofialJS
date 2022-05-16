@@ -1,18 +1,18 @@
-    document.getElementById ('terminos').onclick = async function () {
-    const { value: accept } = await Swal.fire({
-      title: 'Terminos y condiciones',
-      input: 'checkbox',
-      inputValue: 1,
-      inputPlaceholder:
-        '¿Estas de acuerdo con los terminos y condicones?',
-      confirmButtonText:
-        'Continue <i class="fa fa-arrow-right"></i>',
-      inputValidator: (result) => {
-        return !result && 'You need to agree with T&C'
-      }
-    })
-  
-  }
+  document.getElementById ('terminos').onclick = async function () {
+  const { value: accept } = await Swal.fire({
+    title: 'Terminos y condiciones',
+    input: 'checkbox',
+    inputValue: 1,
+    inputPlaceholder:
+      '¿Estas de acuerdo con los terminos y condicones?',
+    confirmButtonText:
+      'Continue <i class="fa fa-arrow-right"></i>',
+    inputValidator: (result) => {
+      return !result && 'You need to agree with T&C'
+    }
+  })
+
+}
 
 document.getElementById ('finalizar').onclick = async function () {
 
@@ -56,7 +56,17 @@ Swal.fire({
 
 }
 
-document.getElementsByClassName ('.fa-user-circle ').onclick = async function () {
-
-  
+document.getElementById ('comprar').onclick = async function () {
+  const { value: email } = await Swal.fire({
+      title: 'Ingrese su email para comenzar con el método de pago:',
+      input: 'email',
+      inputLabel: 'Email',
+      inputPlaceholder: 'Email'
+    })
+    
+    if (email) {
+      Swal.fire(`Entered email: ${email}`)
+    } 
+  return location.href='../html/comprar.html';
 }
+

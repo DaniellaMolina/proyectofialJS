@@ -293,4 +293,318 @@ const cakes =[
       "precio": 100,
       "img": "../images/71.png"
     },
-  ]
+    {
+      "id": 41,
+      "nombre": "Té de manzana verde y menta",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/4.png"
+    },
+    {
+      "id": 42,
+      "nombre": "Té mansanilla",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/5.png"
+    },
+    {
+      "id": 43,
+      "nombre": "Pu Erh con esencia de caramelo",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/6.png"
+    },
+    {
+      "id": 44,
+      "nombre": "Té verde y choco",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/7.png"
+    },
+    {
+      "id": 45,
+      "nombre": "Detox noche",
+      "descripcion":"",
+      "precio": 100,
+      "img": "../images/8.png"
+    },
+    {
+      "id": 46,
+      "nombre": "Té de frutos Rojos",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/9.png"
+    },
+    {
+      "id": 47,
+      "nombre": "Té jazmin",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/10.png"
+    },
+    {
+      "id": 48,
+      "nombre": "Té de pera y crema",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/11.png"
+    },
+    {
+      "id": 49,
+      "nombre": "Té gunpowder marroquí",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/12.png"
+    },
+    {
+      "id": 50,
+      "nombre": "Té Yin Gou Mei",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/13.png"
+    },
+    {
+      "id": 51,
+      "nombre": "Té Meng Ding Huang Ya",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/14.png"
+    },
+    {
+      "id": 52,
+      "nombre": "Té Shui Jin Gui",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/15.png"
+    },
+    {
+      "id": 53,
+      "nombre": "Té Rara Willow White",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/16.png"
+    },
+    {
+      "id": 54,
+      "nombre": "Té Green Rooibos",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/17.png"
+    },
+    {
+      "id": 55,
+      "nombre": "Té Cranberry",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/18.png"
+    },
+    {
+      "id": 56,
+      "nombre": "Té Fresa Kiwi",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/19.png"
+    },
+    {
+      "id": 57,
+      "nombre": "Té de menta",
+      "descripcion": "",
+      "precio": 100,
+      "img": "../images/20.png"
+    }, 
+]
+
+const macarons=[
+  {
+    "id": 31,
+    "nombre": "Red velvet",
+    "descripcion": "Relleno de un aterciopelado ganache de queso crema.  ",
+    "precio": 100,
+    "img": "../images/62.png"
+  },
+  {
+    "id": 32,
+    "nombre": "Orange",
+    "descripcion": "Relleno de mouse de naranja",
+    "precio": 100,
+    "img": "../images/63.png"
+  },
+  {
+    "id": 33,
+    "nombre": "Limon amarillo",
+    "descripcion": "Es una combinación perfecta de un sabor aromático, dulce y ácido a la vez.",
+    "precio": 100,
+    "img": "../images/64.png"
+  },
+  {
+    "id": 34,
+    "nombre": "Casis",
+    "descripcion": "Macaron relleno de cassis",
+    "precio": 100,
+    "img": "../images/65.png"
+  },
+  {
+    "id": 35,
+    "nombre": "Matcha",
+    "descripcion":"Macaron con un relleno intenso de té verde y con increíbles propiedades antioxidantes.",
+    "precio": 100,
+    "img": "../images/66.png"
+  },
+  {
+    "id": 36,
+    "nombre": "Frambuesa",
+    "descripcion": "Macaron con relleno de ganache de frambuesa.  ",
+    "precio": 100,
+    "img": "../images/67.png"
+  },
+  {
+    "id": 37,
+    "nombre": "Crema del cielo",
+    "descripcion": "Macarron relleno de crema americana blue",
+    "precio": 100,
+    "img": "../images/68.png"
+  },
+  {
+    "id": 38,
+    "nombre": "Grey",
+    "descripcion": "Macarron relleno de queso crema",
+    "precio": 100,
+    "img": "../images/69.png"
+  },
+  {
+    "id": 39,
+    "nombre": "Chocolate",
+    "descripcion": "El mejor chocolate belga transformado en un suave ganache.",
+    "precio": 100,
+    "img": "../images/70.png"
+  },
+  {
+    "id": 40,
+    "nombre": "Vainilla",
+    "descripcion": "Macaron con ganache de vainilla de Papantla",
+    "precio": 100,
+    "img": "../images/71.png"
+  },
+]
+
+const te=[
+  {
+    "id": 41,
+    "nombre": "Té de manzana verde y menta",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/4.png"
+  },
+  {
+    "id": 42,
+    "nombre": "Té mansanilla",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/5.png"
+  },
+  {
+    "id": 43,
+    "nombre": "Pu Erh con esencia de caramelo",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/6.png"
+  },
+  {
+    "id": 44,
+    "nombre": "Té verde y choco",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/7.png"
+  },
+  {
+    "id": 45,
+    "nombre": "Detox noche",
+    "descripcion":"",
+    "precio": 100,
+    "img": "../images/8.png"
+  },
+  {
+    "id": 46,
+    "nombre": "Té de frutos Rojos",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/9.png"
+  },
+  {
+    "id": 47,
+    "nombre": "Té jazmin",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/10.png"
+  },
+  {
+    "id": 48,
+    "nombre": "Té de pera y crema",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/11.png"
+  },
+  {
+    "id": 49,
+    "nombre": "Té gunpowder marroquí",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/12.png"
+  },
+  {
+    "id": 50,
+    "nombre": "Té Yin Gou Mei",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/13.png"
+  },
+  {
+    "id": 51,
+    "nombre": "Té Meng Ding Huang Ya",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/14.png"
+  },
+  {
+    "id": 52,
+    "nombre": "Té Shui Jin Gui",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/15.png"
+  },
+  {
+    "id": 53,
+    "nombre": "Té Rara Willow White",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/16.png"
+  },
+  {
+    "id": 54,
+    "nombre": "Té Green Rooibos",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/17.png"
+  },
+  {
+    "id": 55,
+    "nombre": "Té Cranberry",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/18.png"
+  },
+  {
+    "id": 56,
+    "nombre": "Té Fresa Kiwi",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/19.png"
+  },
+  {
+    "id": 57,
+    "nombre": "Té de menta",
+    "descripcion": "",
+    "precio": 100,
+    "img": "../images/20.png"
+  },  
+]

@@ -9,7 +9,7 @@ for (let cake of cakes ) {
             <div class="card text-center" style="width: 15rem; margin:1rem;">
             <div class="card-body">
                 <img src="${cake.img}" id="" class="card-img-top img-fluid" alt="">
-                <h2 class="card-title">${cake.nombre}</h2>
+                <h2 class="card-title h3">${cake.nombre}</h2>
                 <p class="card-text">$${cake.precio}</p>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
@@ -17,8 +17,37 @@ for (let cake of cakes ) {
             </div>
         </div>
         `);
-  } 
+} 
 
+for (let cake of macarons) {
+  $("#cuerpo2").append(`
+            <div class="card text-center" style="width: 15rem; margin:1rem;">
+            <div class="card-body">
+                <img src="${cake.img}" id="" class="card-img-top img-fluid" alt="">
+                <h2 class="card-title h3">${cake.nombre}</h2>
+                <p class="card-text">$${cake.precio}</p>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
+                </div>
+            </div>
+        </div>
+        `);
+} 
+
+for (let cake of te) {
+  $("#cuerpo3").append(`
+            <div class="card text-center" style="width: 15rem; margin:1rem;">
+            <div class="card-body">
+                <img src="${cake.img}" id="" class="card-img-top img-fluid" alt="">
+                <h2 class="card-title h3">${cake.nombre}</h2>
+                <p class="card-text">$${cake.precio}</p>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
+                </div>
+            </div>
+        </div>
+        `);
+} 
 
 // ----- Carrito ----- //
 // ----- Tabla del carrito ----- //
@@ -77,7 +106,7 @@ function dibujarTabla(carrito) {
 
     $(`#eliminar${cake.id}`).on("click", () => {
       Swal.fire({
-        position: "top-center",
+        position: "center",
         icon: "error",
         title: "El producto fue quitado",
         showConfirmButton: false,
@@ -89,9 +118,6 @@ function dibujarTabla(carrito) {
 
   
 }
-
-
-
 
 
 // ----- Precio Total ----- //
@@ -132,7 +158,7 @@ function agregarCarrito(id) {
     guardarAlLocal("carritoEnStorage", carrito);
     //return vacio para que pare la funcion
     return Swal.fire({
-      position: "top-center",
+      position: "center",
       icon: "success",
       title: "El producto fue agregado al carrito",
       showConfirmButton: false,
@@ -154,7 +180,7 @@ function agregarCarrito(id) {
       //Guardo en el localStorage
       guardarAlLocal("carritoEnStorage", carrito);
       return 	Swal.fire({
-        position: "top-center",
+        position: "center",
         icon: "success",
         title: "El producto fue agregado al carrito correctamente",
         showConfirmButton: false,
@@ -200,18 +226,6 @@ function guardarAlLocal(key, data) {
 }
 
 
-document.getElementById ('comprar').onclick = async function () {
-  const { value: email } = await Swal.fire({
-      title: 'Ingrese su email para comenzar con el método de pago:',
-      input: 'email',
-      inputLabel: 'Email',
-      inputPlaceholder: 'Email'
-    })
-    
-    if (email) {
-      Swal.fire(`Entered email: ${email}`)
-    } 
-  return location.href='../html/comprar.html';
-}
+
 
 

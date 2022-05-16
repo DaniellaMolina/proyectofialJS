@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-dark>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +12,7 @@
     <!-- SEO -->
     <meta name="description" content="">
     <meta name="keywords"  content="">
-
-
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,12 +27,12 @@
     <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
 
     <!-- Css -->
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
-<body data-dark>
+<body>
     
-    <!-- Navbar -->
+      <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">
@@ -57,7 +56,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="../html/cakes.html">Cakes</a></li>
                   <li><a class="dropdown-item" href="../html/macarons.html">Macarons</a></li>
-                  <li><a class="dropdown-item" href="../html/teatime.html">Tea time</a></li>
+                  <li><a class="dropdown-item" href="../html/te.html">Tea time</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -65,65 +64,48 @@
               </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
-                <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
+              <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
+              <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
             </form>
             <div class="social">
               <a href="../html/carrito.html"><i class="fa fa-shopping-cart fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
-              <a href=""><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
-           </div>
+              <span class="badge badge-light">0</span>
+              <a href="../html/carrito.html"><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+          </div>
           </div>
         </div>
-      
-
     </nav>
-   
 
-    <!-- Contact form -->
-    <section>  
-        <div class="container d-flex justify-content-center">
-            <div class="row my-2 mx-2">
-                <div class="col-md-6"> <img src="../images/1.png" alt="IMG"> </div>
-                <!--col-->
-                <div class="col-md-6">
-                    <h2 class="form-title">Contacto</h2>
-                    <p class="justify text-muted">¿Tiene alguna consulta o le gustaría darnos su opinión? Complete el siguiente formulario para contactar con nuestro equipo.</p>
-                    <form action="" id="contact-form">
-                        <div id="nombreDiv" class="contact-form form-group pt-2 pl-1"> 
-                            <label for="exampleInputName">Nombre</label> 
-                            <input id="aContacto" type="text" class="form-control" id="exampleInputName" title="El nombre solo acepta letras y espacios en blanco" required pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$"> 
-                        </div>
-                        <div id="apellidoDiv" class="contact-form form-group pt-2 pl-1"> 
-                            <label for="exampleInputName">Apellido</label> 
-                            <input type="text" class="form-control" id="exampleInputName" title="El apellido solo acepta letras y espacios en blanco" required pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$"> 
-                        </div>
-                        <div id="emailDiv" class="form-group pl-1"> 
-                            <label for="exampleInputEmail1">Email</label> 
-                            <input type="email" class="form-control" id="exampleInputEmail1" title="No ingresaste un mail válido" required name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"> 
-                        </div>
-                        <div id="aContactoDiv" class="form-group pl-1"> 
-                            <label id="aContacto" for="exampleFormControlTextarea1">Deje su mensaje</label> 
-                            <textarea class="form-control" id="aContacto" rows="5" required data-pattern="^.{1,255}$" title="Tu mensaje no puede superar los 255 caracteres" ></textarea> 
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 offset-md-9">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </div>
-                        <div class="contact-form-loader none">
-                            <img src="../images/three-dots.svg" alt="Cargando">
-                        </div>
-                        <div class="contact-form-response none">
-                            <p>Los datos han sido enviados</p>
-                        </div>
-                    </form>
-                </div>
-                <!--col-->
-            </div>
-            <!--row-->
+    <!-- Listado de productos -->
+    <div class="container">
+        <div>
+            <img src="../images/75.png" class="img-fluid mb-2 mt-3" alt="...">
         </div>
-    </section>
 
+        <div id="contenedor">
+            <div id="listado-cakes">
+                <div class="row">
+                    <div class="col-12 col-sm-3">
+                        <div class="card bg-secondary mb-3">
+                            <div class="card-header bg-secondary text-white text-uppercase"><i class="fa fa-list"></i> Categorías</div>
+                            <ul class="list-group category_block">
+                                <li class="list-group-item"><a href="../html/cakes.html">Cakes</a></li>
+                                <li class="list-group-item"><a href="../html/macarons.html">Macarons</a></li>
+                                <li class="list-group-item"><a href="../html/te.html">Té</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="col">
+                        <div class="row" id="cuerpo3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Icono de whatsapp flotante -->
     <div>
@@ -132,7 +114,6 @@
     </a>
     </div>
 
-    
     <!-- Footer -->
     <footer class="container-fluid bg-dark py-5">
         <div class="container">
@@ -169,10 +150,13 @@
         </div>
     </footer>
     
+
     <!-- Jquery -->
     <script  src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!--  Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"crossorigin="anonymous"></script>
@@ -182,7 +166,9 @@
 
     
     <!-- Link con Javascript -->
-    <script src="../javascript/contacto.js"></script>
+    <script src="../javascript/productos.json"></script>
+    <script src="../javascript/carrito.js"></script>
+    <script src="../javascript/filtrosdeBusqueda.js"></script>
 
 </body>
 </html>
