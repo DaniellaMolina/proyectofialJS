@@ -4,21 +4,21 @@ console.log(carrito);
 dibujarTabla(carrito);
 
 // ----- Imprimir productos en el HTML, convertir un archivo json a datos javascript----- //
-for (let cake of cakes) {
+for (let cake of cakes ) {
   $("#cuerpo").append(`
             <div class="card text-center" style="width: 15rem; margin:1rem;">
             <div class="card-body">
                 <img src="${cake.img}" id="" class="card-img-top img-fluid" alt="">
                 <h2 class="card-title">${cake.nombre}</h2>
-                <h5 class="card-subtitle mb-2 text-muted">${cake.descripcion}</h5>
                 <p class="card-text">$${cake.precio}</p>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <button id="agregar${cake.id}" type="button" onclick="agregarCarrito(${cake.id})" class="btn btn-dark"> Agregar </button>
-                    <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number" value="1">
                 </div>
             </div>
         </div>
-        `);} 
+        `);
+  } 
+
 
 // ----- Carrito ----- //
 // ----- Tabla del carrito ----- //
@@ -52,38 +52,62 @@ function dibujarTabla(carrito) {
                       </tr>
                   <tr> 
                       <td> <button id="vaciarCarrito" class="btn btn-dark"> Vaciar Carrito </button> </td>
-                      <td> <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#comprarModal" onclick="location.href='../html/comprar.html'">Comprar</button><td> 
+                      <td> <button id="comprar" class="btn btn-dark" type="button" data-toggle="modal" data-target="#comprarModal" onclick="location.href='../html/comprar.html'">Comprar</button><td> 
                   </tr>
+
                   </tbody>
               </table>
-        `);
+        `
+        );
 
   for (let cake of carrito) {
     $("#bodyTabla").append(`
                   <tr>
                       <th scope="row"><img src=${cake.img} class="shopping-cart-image"></th>
                       <td>${cake.nombre}</td>
-                      <td><input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number" value="1">${cake.cantidad}</td>
-                      <td>$${cake.precioTotal}</td>
-                      <td><button id="eliminar${cake.id}" type="button" class="btn btn-dark">Eliminar</button></td>
+                      <td>${cake.cantidad}</td>
+                      <td>$${cake.precio}</td>
+                      <td><button id="eliminar${cake.id}" type="button" class="btn-group btn-dark">Eliminar</button></td>
                   </tr>
-            `);
+            `);     
 
     $(`#eliminar${cake.id}`).on("click", () => {
       eliminarDelCarrito(cake.id);
     });
+
+    $(`#eliminar${cake.id}`).on("click", () => {
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "El producto fue quitado",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+
   }
+
+  
 }
 
+
+
+
+
+// ----- Precio Total ----- //
 function calcularPrecioTotal(data) {
   let precioTotal = 0;
 
   data.forEach((element) => {
-    precioTotal = precioTotal + element.precio * element.cantidad;
-  });
+
+    precioTotal = precioTotal + element.precio *element.cantidad; 
+  }); 
 
   return precioTotal;
+
 }
+
+
 
 // la propiedad cantidad si queres la podes rear directamente en el array de tortas
 // ----- Agregar al carrito ----- //
@@ -101,12 +125,20 @@ function agregarCarrito(id) {
     //agrego el cake completo al carrito
     carrito.push(cakeComplete);
 
+   
     //Dibujo la tabla
     dibujarTabla(carrito);
     //guardar en storage
     guardarAlLocal("carritoEnStorage", carrito);
     //return vacio para que pare la funcion
-    return;
+    return Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "El producto fue agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500,
+      });;
+    
   }
 
   //Si ya lo tiene...
@@ -121,10 +153,19 @@ function agregarCarrito(id) {
       dibujarTabla(carrito);
       //Guardo en el localStorage
       guardarAlLocal("carritoEnStorage", carrito);
-      return;
+      return 	Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "El producto fue agregado al carrito correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });;
     }
   }
+
+
 }
+
 
 // ----- Eliminar al carrito ----- //
 function eliminarDelCarrito(id) {
@@ -138,7 +179,39 @@ function eliminarDelCarrito(id) {
   dibujarTabla(carrito);
 }
 
-//funcion para no repetir tanto.
+
+// ----- Vaciar al carrito ----- //
+const vaciarCarrito = document.getElementById ("vaciarCarrito")
+vaciarCarrito.addEventListener ("click", () => {
+  carrito = []
+  
+  dibujarTabla(carrito);
+  eliminarAlLocal ("carritoEnStorage", carrito);
+})
+
+// ----- Vaciar el Storage ----- //
+function eliminarAlLocal(key, data) {
+  return localStorage.clear(key, JSON.stringify(data));
+}
+
+// ----- Guardar el Storage ----- //
 function guardarAlLocal(key, data) {
   return localStorage.setItem(key, JSON.stringify(data));
 }
+
+
+document.getElementById ('comprar').onclick = async function () {
+  const { value: email } = await Swal.fire({
+      title: 'Ingrese su email para comenzar con el método de pago:',
+      input: 'email',
+      inputLabel: 'Email',
+      inputPlaceholder: 'Email'
+    })
+    
+    if (email) {
+      Swal.fire(`Entered email: ${email}`)
+    } 
+  return location.href='../html/comprar.html';
+}
+
+

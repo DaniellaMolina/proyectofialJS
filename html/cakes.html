@@ -22,6 +22,11 @@
     <script defer src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Iconos -->
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+
     <!-- Css -->
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
@@ -54,8 +59,6 @@
                   <li><a class="dropdown-item" href="../html/macarons.html">Macarons</a></li>
                   <li><a class="dropdown-item" href="../html/teatime.html">Tea time</a></li>
                   <li><a class="dropdown-item" href="../html/paratomarencasa.html">Para tomar en casa</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Por encargue</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -63,20 +66,16 @@
               </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
-                <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
+              <input class="form-control me-2"id="busqueda"type="text"placeholder="Buscador"aria-label="Search"/>
+              <button class="btn btn-outline-secondary m-2" id="btnFiltrar" type="button">Buscar</button>
             </form>
-            <div class="social d-flex">
-                <li style="list-style-type: none;">
-                    <a href="./carrito.html"><i class="fa fa-shopping-cart fa-2x fa-lg p-4" style="color:#FFFFFF;" aria-hidden="true"></i></a>
-                </li>
-
-              <a href=""><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
-           </div>
+            <div class="social">
+              <a href="../html/carrito.html"><i class="fa fa-shopping-cart fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+              <span class="badge badge-light">0</span>
+              <a href="../html/carrito.html"><i class="fa fa-user-circle fa-2x fa-lg p-1" style="color:#FFFFFF;" aria-hidden="true"></i></a>
+          </div>
           </div>
         </div>
-      
-
     </nav>
 
     <!-- Listado de productos -->
@@ -111,6 +110,12 @@
 
     </div>
 
+      <!-- Icono de whatsapp flotante -->
+    <div>
+        <a href="https://wa.me/598098061622" class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="container-fluid bg-dark py-5">
@@ -153,7 +158,9 @@
     <script  src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    
+    <!--  Sweet Alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"crossorigin="anonymous"></script>
 
@@ -164,6 +171,6 @@
     <!-- Link con Javascript -->
     <script src="../javascript/productos.json"></script>
     <script src="../javascript/carrito.js"></script>
-    <script src="../javascript/filtrosdeBusqueda.js"></script>
+    <script src="../javascript/animaciones.js"></script>
 </body>
 </html>
