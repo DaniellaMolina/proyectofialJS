@@ -1,4 +1,5 @@
-  document.getElementById ('terminos').onclick = async function () {
+// ----- Simulador de si acepta los terminos y condiciones para terminar la compra---- //
+document.getElementById ('terminos').onclick = async function () {
   const { value: accept } = await Swal.fire({
     title: 'Terminos y condiciones',
     input: 'checkbox',
@@ -14,6 +15,7 @@
 
 }
 
+// ----- Cuando apreto finalizar la compra, procesa y deriva a index, borrando carrito del Storage----- //
 document.getElementById ('finalizar').onclick = async function () {
 
   let timerInterval
@@ -56,6 +58,7 @@ Swal.fire({
 
 }
 
+// ----- Pide mail cuando pongo comprar, luego deriva en el html comprar.---- //
 document.getElementById ('comprar').onclick = async function () {
   const { value: email } = await Swal.fire({
       title: 'Ingrese su email para comenzar con el método de pago:',
@@ -70,3 +73,15 @@ document.getElementById ('comprar').onclick = async function () {
   return location.href='../html/comprar.html';
 }
 
+
+// ----- Counter----- //
+let agregar = document.querySelector("#agregar")
+let eliminar = document.querySelector("#eliminar")
+let badge = document.querySelector("#badge")
+
+agregar.addEventListener ("click", () => {
+ badge.value = parseInt(badge.value) +1;
+})
+eliminar.addEventListener ("click", () => {
+  badge.value = parseInt(badge.value) -1;
+})
