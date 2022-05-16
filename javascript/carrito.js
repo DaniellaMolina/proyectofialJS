@@ -106,7 +106,7 @@ function dibujarTabla(carrito) {
 
     $(`#eliminar${cake.id}`).on("click", () => {
       Swal.fire({
-        position: "center",
+        position: "tcenter",
         icon: "error",
         title: "El producto fue quitado",
         showConfirmButton: false,
@@ -158,7 +158,7 @@ function agregarCarrito(id) {
     guardarAlLocal("carritoEnStorage", carrito);
     //return vacio para que pare la funcion
     return Swal.fire({
-      position: "center",
+      position: "top-center",
       icon: "success",
       title: "El producto fue agregado al carrito",
       showConfirmButton: false,
@@ -180,7 +180,7 @@ function agregarCarrito(id) {
       //Guardo en el localStorage
       guardarAlLocal("carritoEnStorage", carrito);
       return 	Swal.fire({
-        position: "center",
+        position: "top-center",
         icon: "success",
         title: "El producto fue agregado al carrito correctamente",
         showConfirmButton: false,
@@ -202,6 +202,7 @@ function eliminarDelCarrito(id) {
     localStorage.removeItem("carritoEnStorage");
   }
   guardarAlLocal("carritoEnStorage", carrito);
+  eliminarAlLocal ("carritoEnStorage", carrito);
   dibujarTabla(carrito);
 }
 
