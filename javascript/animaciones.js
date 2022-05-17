@@ -1,3 +1,7 @@
+let agregar = document.querySelector("#agregar");
+let eliminar = document.querySelector("#eliminar");
+let badge = document.querySelector("#badge");
+
 // ----- Simulador de si acepta los terminos y condiciones para terminar la compra---- //
 document.getElementById ('terminos').onclick = async function () {
   const { value: accept } = await Swal.fire({
@@ -75,13 +79,13 @@ document.getElementById ('comprar').onclick = async function () {
 
 
 // ----- Counter----- //
-let agregar = document.querySelector("#agregar")
-let eliminar = document.querySelector("#eliminar")
-let badge = document.querySelector("#badge")
+let counter = 0;
 
 agregar.addEventListener ("click", () => {
  badge.value = parseInt(badge.value) +1;
+ counter ++; 
 })
 eliminar.addEventListener ("click", () => {
   badge.value = parseInt(badge.value) -1;
+  counter --; 
 })

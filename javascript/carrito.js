@@ -2,6 +2,7 @@
   let carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || [];
   console.log(carrito);
   dibujarTabla(carrito);
+  actualizarCarrito ();
   
   // ----- Imprimir productos en el HTML, convertir un archivo json a datos javascript----- //
   for (let cake of cakes ) {
@@ -48,6 +49,11 @@
           </div>
           `);
   } 
+
+  function actualizarCarrito (){
+
+    $('#badge').html (carrito.length);
+  }
   
   // ----- Carrito ----- //
   // ----- Tabla del carrito ----- //
@@ -95,7 +101,7 @@
                         <th scope="row"><img src=${cake.img} class="shopping-cart-image"></th>
                         <td>${cake.nombre}</td>
                         <td>${cake.cantidad}</td>
-                        <td>$${cake.precio}</td>
+                        <td>$${cake.precio}</td>agre
                         <td><button id="eliminar${cake.id}" type="button" class="eliminar btn-group btn-dark">Eliminar</button></td>
                     </tr>
               `);     
@@ -150,7 +156,8 @@
       const cakeComplete = {...cake, cantidad: 1};
       //agrego el cake completo al carrito
       carrito.push(cakeComplete);
-  
+
+      actualizarCarrito ()
      
       //Dibujo la tabla
       dibujarTabla(carrito);
@@ -204,6 +211,7 @@
     guardarAlLocal("carritoEnStorage", carrito);
     eliminarAlLocal ("carritoEnStorage", carrito);
     dibujarTabla(carrito);
+    actualizarCarrito ();
   }
   
   
@@ -215,7 +223,7 @@
     dibujarTabla(carrito);
     eliminarAlLocal ("carritoEnStorage", carrito);
   })
-  
+
   // ----- Vaciar el Storage ----- //
   function eliminarAlLocal(key, data) {
     return localStorage.clear(key, JSON.stringify(data));
