@@ -1,6 +1,8 @@
 let agregar = document.querySelector("#agregar");
 let eliminar = document.querySelector("#eliminar");
-let badge = document.querySelector("#badge");
+let comprar = document.querySelector("#comprar");
+
+
 
 // ----- Simulador de si acepta los terminos y condiciones para terminar la compra---- //
 document.getElementById ('terminos').onclick = async function () {
@@ -54,6 +56,8 @@ Swal.fire({
     
   } else {
     eliminarAlLocal ("carritoEnStorage", carrito);
+    vaciarCarrito();
+    actualizarCarrito ();
   }
 
   return location.href='../index.html';
@@ -62,30 +66,4 @@ Swal.fire({
 
 }
 
-// ----- Pide mail cuando pongo comprar, luego deriva en el html comprar.---- //
-document.getElementById ('comprar').onclick = async function () {
-  const { value: email } = await Swal.fire({
-      title: 'Ingrese su email para comenzar con el método de pago:',
-      input: 'email',
-      inputLabel: 'Email',
-      inputPlaceholder: 'Email'
-    })
-    
-    if (email) {
-      Swal.fire(`Entered email: ${email}`)
-    } 
-  return location.href='../html/comprar.html';
-}
 
-
-// ----- Counter----- //
-let counter = 0;
-
-agregar.addEventListener ("click", () => {
- badge.value = parseInt(badge.value) +1;
- counter ++; 
-})
-eliminar.addEventListener ("click", () => {
-  badge.value = parseInt(badge.value) -1;
-  counter --; 
-})

@@ -3,7 +3,7 @@
   console.log(carrito);
   dibujarTabla(carrito);
   actualizarCarrito ();
-  
+ 
   // ----- Imprimir productos en el HTML, convertir un archivo json a datos javascript----- //
   for (let cake of cakes ) {
     $("#cuerpo").append(`
@@ -50,11 +50,14 @@
           `);
   } 
 
+    // ----- Counter ----- //
   function actualizarCarrito (){
 
     $('#badge').html (carrito.length);
   }
   
+
+
   // ----- Carrito ----- //
   // ----- Tabla del carrito ----- //
   function dibujarTabla(carrito) {
@@ -93,8 +96,11 @@
                     </tbody>
                 </table>
           `
+ 
           );
+
   
+
     for (let cake of carrito) {
       $("#bodyTabla").append(`
                     <tr>
@@ -119,9 +125,10 @@
           timer: 1500,
         });
       });
+
   
     }
-  
+   
     
   }
   
@@ -156,13 +163,15 @@
       const cakeComplete = {...cake, cantidad: 1};
       //agrego el cake completo al carrito
       carrito.push(cakeComplete);
-
-      actualizarCarrito ()
+      
      
+      actualizarCarrito ()
+
       //Dibujo la tabla
       dibujarTabla(carrito);
       //guardar en storage
       guardarAlLocal("carritoEnStorage", carrito);
+      
       //return vacio para que pare la funcion
       return Swal.fire({
         position: "top-center",
@@ -170,6 +179,7 @@
         title: "El producto fue agregado al carrito",
         showConfirmButton: false,
         timer: 1500,
+        
         });;
       
     }
@@ -204,11 +214,11 @@
   function eliminarDelCarrito(id) {
     //Pequeña logica que borra un elemento del array. Con el ! Le digo que me saque y me deje los elementos que no tengan el id con el que comparo.
     carrito = carrito.filter((cake) => cake.id !== id);
-  
+
     if (carrito.length === 0) {
       localStorage.removeItem("carritoEnStorage");
     }
-    guardarAlLocal("carritoEnStorage", carrito);
+   
     eliminarAlLocal ("carritoEnStorage", carrito);
     dibujarTabla(carrito);
     actualizarCarrito ();
@@ -216,12 +226,13 @@
   
   
   // ----- Vaciar al carrito ----- //
-  const vaciarCarrito = document.getElementById ("vaciarCarrito")
+  
   vaciarCarrito.addEventListener ("click", () => {
     carrito = []
     
     dibujarTabla(carrito);
     eliminarAlLocal ("carritoEnStorage", carrito);
+    actualizarCarrito ();
   })
 
   // ----- Vaciar el Storage ----- //
